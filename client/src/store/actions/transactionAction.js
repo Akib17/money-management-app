@@ -2,7 +2,7 @@ import Axios from "axios";
 import * as Types from './types'
 
 export const loadTransactions = () => dispatch => {
-    Axios.get('http://localhost:4000/api/transaction')
+    Axios.get('/api/transaction')
         .then(res => {
             dispatch({
                 type: Types.LOAD_TRANSACTIONS,
@@ -17,7 +17,7 @@ export const loadTransactions = () => dispatch => {
 }
 
 export const createTransaction = transaction => dispatch => {
-    Axios.post('http://localhost:4000/api/transaction', transaction)
+    Axios.post('/api/transaction', transaction)
         .then(res => {
             dispatch({
                 type: Types.CREATE_TRANSACTION,
@@ -32,7 +32,7 @@ export const createTransaction = transaction => dispatch => {
 }
 
 export const removeTransaction = id => dispatch => {
-    Axios.delete(`http://localhost:4000/api/transaction/${id}`)
+    Axios.delete(`/api/transaction/${id}`)
         .then(res => {
             dispatch({
                 type: Types.REMOVE_TRANSACTION,
@@ -47,7 +47,7 @@ export const removeTransaction = id => dispatch => {
 }
 
 export const updateTransaction = (id, transaction) => dispatch => {
-    Axios.put(`http://localhost:4000/api/transaction/${id}`, transaction)
+    Axios.put(`/api/transaction/${id}`, transaction)
         .then(res => {
             dispatch({
                 type: Types.UPDATE_TRANSACTION,
